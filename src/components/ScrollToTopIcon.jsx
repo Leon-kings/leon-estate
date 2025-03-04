@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
-React;
+import { motion } from "framer-motion";
+React
 const ScrollToTopIcon = () => {
   const [showIcon, setShowIcon] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowIcon(true); // Show icon when scrolled 200px down
-      } else {
-        setShowIcon(false); // Hide icon when at top
-      }
+      setShowIcon(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -27,9 +23,12 @@ const ScrollToTopIcon = () => {
   return (
     <>
       {showIcon && (
-        <div
+        <motion.div
           onClick={scrollToTop}
           className="fixed bottom-5 right-5 bg-blue-500 p-4 rounded-full shadow-lg cursor-pointer hover:bg-blue-700 transition duration-300"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ const ScrollToTopIcon = () => {
               d="m4.5 15.75 7.5-7.5 7.5 7.5"
             />
           </svg>
-        </div>
+        </motion.div>
       )}
     </>
   );

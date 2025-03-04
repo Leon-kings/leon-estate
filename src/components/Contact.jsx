@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { toast } from "react-toastify";
 React;
 const Contact = () => {
   const [result, setResult] = useState("");

@@ -5,11 +5,15 @@ import ScrollToTopIcon from "./components/ScrollToTopIcon";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Testimonial from "./components/Testimonial";
+import Head from "./components/header/Head";
+import About from "./Components/About";
 React;
 const Footer = () => {
   return (
     <>
     <Navbar/>
+    <Head/>
+    <About/>
     <ScrollToTopIcon/>
     <Projects/>
     <Testimonial/>

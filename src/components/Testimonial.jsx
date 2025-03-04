@@ -1,9 +1,10 @@
 import React from "react";
 import { assets, testimonialsData } from "../assets/data/assets";
+import { motion } from "framer-motion";
 React;
 const Testimonial = () => {
   return (
-    <div
+<div
       className="container mx-auto py-10 lg:px-32 w-full overflow-hidden"
       id="Testimonials"
     >
@@ -16,11 +17,14 @@ const Testimonial = () => {
         Hear from our clients about the impact of our services.
       </p>
 
-      <div className=" grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 justify-center gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 justify-center gap-2">
         {testimonialsData.map((testimonial, index) => (
-          <div
+          <motion.div
             key={index}
             className="w-full border shadow-lg rounded px-8 py-12 text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <img
               className="w-20 h-20 rounded-full mx-auto mb-4"
@@ -32,12 +36,12 @@ const Testimonial = () => {
             </h3>
             <p className="text-gray-500 mb-4 text-sm">{testimonial.title}</p>
             <div className="flex justify-center gap-1 text-red-500 mb-4">
-              {Array.from({ length: testimonial.rating }, (item, index) => (
-                <img key={index} src={assets.star_icon} alt="" />
+              {Array.from({ length: testimonial.rating }, (_, i) => (
+                <img key={i} src={assets.star_icon} alt="star" />
               ))}
             </div>
             <p className="text-gray-600">{testimonial.text}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
