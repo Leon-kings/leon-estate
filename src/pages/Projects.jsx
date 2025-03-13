@@ -80,7 +80,7 @@ const Projects = () => {
     {/* Project Slider */}
     <div className="overflow-hidden">
       <motion.div
-        className="flex gap-8"
+        className="flex gap-4"
         initial={{ x: "100%" }}
         animate={{ x: `-${(currentIndex * 100) / cardsToShow}%` }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -91,15 +91,15 @@ const Projects = () => {
             className="relative flex-shrink-0 w-full sm:w-1/4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: index * 0.2 }}
+            transition={{ duration: 0, delay: index * 0.1 }}
           >
             <img
               src={project.image}
-              alt={project.title}
-              className="w-full h-auto mb-14"
+              alt=''
+              className="w-full h-auto mb-14 object-cover"
             />
             <div className="absolute left-0 right-0 bottom-5 flex justify-center">
-              <div className="inline-block bg-white w-3/4 px-4 py-2 shadow-md">
+              <div className="inline-block bg-white w-3/4 py-2 shadow-md">
                 <h3 className="text-xl font-semibold text-gray-800">
                   {project.title}
                 </h3>

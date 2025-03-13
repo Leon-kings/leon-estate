@@ -71,6 +71,18 @@ export const projectsData = [
     location: "Hyderabad",
     image: project_img_6,
   },
+  {
+    title: "Vista Verde",
+    price: "$,50,000",
+    location: "Kolkata",
+    image: project_img_5,
+  },
+  {
+    title: "Serenity Suites",
+    price: "$,50,000",
+    location: "Hyderabad",
+    image: project_img_6,
+  },
 ];
 
 export const testimonialsData = [

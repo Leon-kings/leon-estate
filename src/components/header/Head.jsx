@@ -1,9 +1,10 @@
 import React from "react";
 import '../../App.css'
 import { motion } from "framer-motion";
+import SearchBox from "../search/SearchBox";
 React
 export default function HomeCover() {
-  return (
+  return (<>
     <div className="cover min-h-screen pt-10 mb-4 bg-cover bg-center flex items-center w-full overflow-hidden">
       <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
         <motion.h2
@@ -20,6 +21,7 @@ export default function HomeCover() {
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="space-x-6 mt-16"
         >
+         
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -37,6 +39,10 @@ export default function HomeCover() {
         </motion.div>
       </div>
     </div>
+    <div className="w-full items-center justify-center justify-items-center lg:w-[500px]">
+    <SearchBox/>
+    </div>
+    </>
   );
 }
 
